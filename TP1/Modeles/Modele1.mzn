@@ -86,4 +86,5 @@ set of int: F= 1..4;
 solve minimize sum(e in equipes)(totalCosts[e]);
 
 output [ if fix(pv[e, tab[e, j]]) == 2 then " @" else "  " endif ++ show(tab[e,j]) ++ if j == nbTeams-1 then "\n" else "" endif | e in equipes, j in jours];
-output [show(totalCosts)]
+output [show(totalCosts), "\n"];
+output ["Nb isoles : ", show(sum(e in equipes)(totalCosts[e]))];

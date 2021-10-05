@@ -74,4 +74,4 @@ solve minimize sum(e in equipes, j in jours)(totalCosts[e, j]);
 
 output [ if fix(pv[e, tab[e, j]]) == 2 then " @" else "  " endif ++ show(tab[e,j]) ++ if j == nbTeams-1 then "\n" else "" endif | e in equipes, j in jours];
 output [show(totalCosts), "\n"];
-output [show(sum(e in equipes, j in jours)(totalCosts[e, j]))];
+output ["Nb isoles : ", show(sum(e in equipes, j in jours)(totalCosts[e, j]))];
